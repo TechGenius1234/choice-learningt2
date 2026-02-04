@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Essay - Choice Learning T2</title>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 0 20px;
+            color: #333;
+        }
+        pre {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+        code {
+            font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+            background: #f4f4f4;
+            padding: 2px 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="content">Loading content...</div>
+
+    <script>
+        // Replace 'yourfile.md' with the actual path to your file
+        const markdownFile = 'https://raw.githubusercontent.com/TechGenius1234/choice-learningt2/refs/heads/main/essay.md';
+
+        async function loadMarkdown() {
+            const displayArea = document.getElementById('content');
+            
+            try {
+                const response = await fetch(markdownFile);
+                
+                if (!response.ok) {
+                    throw new Error('Could not find the Markdown file.');
+                }
+
+                const text = await response.text();
+                // Convert Markdown to HTML and inject it
+                displayArea.innerHTML = marked.parse(text);
+                
+            } catch (error) {
+                displayArea.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
+            }
+        }
+
+        loadMarkdown();
+    </script>
+</body>
+</html>
