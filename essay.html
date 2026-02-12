@@ -28,33 +28,6 @@
     </style>
 </head>
 <body>
-
-    <div id="content">Loading content...</div>
-
-    <script>
-        // Replace 'yourfile.md' with the actual path to your file
-        const markdownFile = 'https://techgenius1234.github.io/choice-learningt2/essay.md';
-
-        async function loadMarkdown() {
-            const displayArea = document.getElementById('content');
-            
-            try {
-                const response = await fetch(markdownFile);
-                
-                if (!response.ok) {
-                    throw new Error('Could not find the Markdown file.');
-                }
-
-                const text = await response.text();
-                // Convert Markdown to HTML and inject it
-                displayArea.innerHTML = marked.parse(text);
-                
-            } catch (error) {
-                displayArea.innerHTML = `<p style="color: red;">Error: ${error.message}</p>`;
-            }
-        }
-
-        loadMarkdown();
-    </script>
+       <iframe src="https://www.canva.com/design/DAHBITlUkOs/7guhJe2z8ZLJCUHfBkQgdg/view?utm_content=DAHBITlUkOs&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6fe3e183f2" title="Full page embedded content"></iframe>
 </body>
 </html>
